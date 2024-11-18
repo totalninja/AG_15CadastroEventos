@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AG_15CadastroEventos.CustoTotal"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="Black" Offset="0.0" />
+            <GradientStop Color="White" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Margin="10">
+        <Label Text="- Resumo Do Contrato -"
+               HorizontalOptions="Center"
+               FontSize="40"/>
+        <Frame>
+
+            <Frame>
+                <VerticalStackLayout>
+                    <Frame>
+                        <Grid RowDefinitions="auto,auto,auto,auto,auto" ColumnDefinitions="*,*,*">
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="Nome do Evento: "/>
+                            <Label Grid.Row="0" Grid.Column="2" Text="{Binding NomeEvento}" TextDecorations="Underline"/>
+
+                            <Label Grid.Row="1" Grid.Column="0" Text="Local:" />
+                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding LocalEvento}" TextDecorations="Underline"/>
+                            <Label Grid.Row="2" Grid.Column="0" Text="N° de Pessoas: "/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="{Binding QtdParticipantes}" TextDecorations="Underline"/>
+                            <Label Grid.Row="3" Grid.Column="0" Text="Data de inicio: "/>
+                            <Label Grid.Row="3" Grid.Column="2" Text="{Binding Datacomeco}" TextDecorations="Underline"/>
+                            <Label Grid.Row="4" Grid.Column="0" Text="Data de termino: "/>
+                            <Label Grid.Row="4" Grid.Column="2" Text="{Binding DataFinal}" TextDecorations="Underline"/>
+
+                        </Grid>
+                    </Frame>
+                    <HorizontalStackLayout Margin="20" HorizontalOptions="Center">
+                        <Label Text="Valor a Ser Pago: R$ " />
+
+                        <Label Text="{Binding ValorTotal}"/>
+                    </HorizontalStackLayout>
+                    <Frame BorderColor="White" WidthRequest="300">
+                        <Button Text="CONFIRMAR" BackgroundColor="Transparent" Clicked="Button_Clicked"/>
+                    </Frame>
+                </VerticalStackLayout>
+            </Frame>
+
+        </Frame>
+    </VerticalStackLayout>
+
+</ContentPage>
+    
+    
